@@ -1,0 +1,86 @@
+/* Global Styles */
+body {
+    background-color: rgb(43, 41, 41);
+    color: white;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    overflow-x: hidden;
+}
+
+/* Navigation container styling */
+#navigation-container {
+    background-color: black;
+    color: white;
+    width: 4%; /* Default width for larger screens */
+    height: 100vh;
+    transition: width 0.3s ease-in-out;
+    overflow: hidden;
+    position: fixed; /* Keeps the sidebar fixed on the left */
+}
+
+/* Sidebar on hover for larger screens */
+#navigation-container:hover {
+    width: 15%; /* Expands on hover for larger screens */
+}
+
+/* Navigation item name visibility */
+.nav-item-name {
+    display: none;
+    opacity: 0;
+    transition: opacity 0.2s ease-in-out;
+}
+
+/* Show navigation item names when hovering over the sidebar */
+#navigation-container:hover .nav-item-name {
+    display: inline-block;
+    opacity: 1;
+}
+
+/* Styling for links and icons */
+a {
+    text-decoration: none;
+    color: white;
+}
+
+a:hover {
+    color: white;
+}
+
+/* For medium screens (1024px and below) */
+@media (max-width: 1024px) {
+    #navigation-container {
+        width: 15%; /* Slightly wider sidebar for tablets */
+    }
+
+    #navigation-container:hover {
+        width: 20%; /* Expands further on hover for tablets */
+    }
+
+    /* Adjust button sizes for smaller screens */
+    .nav-item-name {
+        font-size: 14px;
+    }
+
+    .nav-item-name {
+        display: inline-block;
+    }
+}
+
+/* For mobile screens (768px and below) */
+@media (max-width: 768px) {
+    #navigation-container {
+        width: 40%; /* Wider sidebar for mobile screens */
+        position: relative;
+    }
+
+    #navigation-container:hover {
+        width: 50%; /* Expands to 50% width on hover for mobile */
+    }
+
+    /* Adjust spacing and sizes for mobile */
+    .nav-item-name {
+        font-size: 12px;
+        display: inline-block;
+    }
+}
